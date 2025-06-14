@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Data Science Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-title {
+            @apply text-4xl font-bold text-center mb-12 text-blue-800;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col;
+        }
+        .project-image {
+            @apply rounded-md mb-4;
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Ensure image covers the area */
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <!-- 1. Home / Introduction Section -->
+        <section id="home" class="flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left py-12">
+            <div class="md:w-1/2 md:pr-12">
+                <h1 class="text-6xl font-extrabold text-blue-900 mb-4">Hi, I'm Barath Anandaraman</h1>
+                <h2 class="text-3xl font-semibold text-blue-700 mb-6">Passionate Data Scientist | Solving Problems with Data</h2>
+                <p class="text-lg leading-relaxed mb-8">
+                    Welcome to my portfolio! I'm a dedicated data scientist with a strong background in machine learning, statistical modeling, and data visualization. I thrive on extracting actionable insights from complex datasets to drive informed decision-making and build impactful solutions.
+                </p>
+                <div class="space-x-4">
+                    <a href="#projects" class="bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Explore My Projects</a>
+                    <a href="#contact" class="border border-blue-700 text-blue-700 px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-100 transition-colors duration-300 shadow-md">Get in Touch</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                <!-- Replace with your professional photo -->
+                <img src="barath.jpeg" alt="Your Professional Photo" class="rounded-full shadow-xl w-64 h-64 md:w-80 md:h-80 object-cover">
+            </div>
+        </section>
+
+        <!-- 2. Portfolio / Projects Section -->
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-6">My Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Project Card: Customer Churn Prediction -->
+                <div class="card">
+                    <img src="churn.png" alt="Customer Churn Prediction Project" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Customer Churn Prediction</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Developed a machine learning model to predict customer churn for a telecom company, identifying key factors influencing customer departure and achieving high prediction accuracy.
+                    </p>
+                    <a href="customer_churn.html" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+
+                <!-- Placeholder Project Cards (9 more) -->
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+2" alt="Project 2 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 2: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 2. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+3" alt="Project 3 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 3: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 3. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+4" alt="Project 4 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 4: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 4. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+5" alt="Project 5 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 5: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 5. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+6" alt="Project 6 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 6: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 6. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+7" alt="Project 7 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 7: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 7. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+8" alt="Project 8 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 8: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 8. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+9" alt="Project 9 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 9: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 9. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+                <div class="card">
+                    <img src="https://placehold.co/600x400/94A3B8/FFFFFF?text=Project+10" alt="Project 10 Thumbnail" class="project-image">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">Project Title 10: [Short Description]</h3>
+                    <p class="text-base text-slate-600 mb-4 flex-grow">
+                        Briefly describe Project 10. Focus on the problem solved or the main outcome.
+                    </p>
+                    <a href="#" class="mt-4 bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-blue-700 transition-colors duration-300 self-start">View Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-16 bg-blue-50 rounded-lg">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-6">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Programming Languages</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>Python</li>
+                        <li>R</li>
+                        <li>SQL</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Libraries & Frameworks</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>Pandas, NumPy</li>
+                        <li>Scikit-learn</li>
+                        <li>TensorFlow, PyTorch</li>
+                        <li>Matplotlib, Seaborn, Plotly</li>
+                        <li>Streamlit, Dash</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Machine Learning / Deep Learning</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>Regression, Classification</li>
+                        <li>Clustering, Dimensionality Reduction</li>
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Computer Vision</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Big Data & Cloud</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>Apache Spark</li>
+                        <li>AWS (S3, EC2, SageMaker)</li>
+                        <li>Google Cloud Platform (GCP)</li>
+                        <li>Splunk, Athena, OpenSearch</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Databases & MLOps</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>PostgreSQL, MySQL, PrestoDB</li>
+                        <li>MongoDB</li>
+                        <li>Git, Docker</li>
+                        <li>CI/CD Basics</li>
+                    </ul>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-blue-800 mb-4">Soft Skills</h3>
+                    <ul class="list-none space-y-2 text-slate-700">
+                        <li>Problem-solving</li>
+                        <li>Data Storytelling</li>
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. About Me (Detailed) Section -->
+        <section id="about" class="py-16">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-6">About Me</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-lg leading-relaxed text-slate-700">
+                <p class="mb-4">
+                    My journey into data science began with a fascination for uncovering hidden patterns in data and transforming them into meaningful insights. I started my career in [Your Previous Field/Education] where I honed my analytical thinking, and eventually transitioned into data science after [mention a key learning experience or pivotal moment, e.g., completing a bootcamp, self-studying for X years].
+                </p>
+                <p class="mb-4">
+                    Outside of my professional endeavors, I'm an avid [Your Hobby, e.g., hiker, chess player, photographer]. This helps me approach complex problems with a fresh perspective and maintain a balanced outlook.
+                </p>
+                <p>
+                    I believe that data has the power to revolutionize industries and improve lives. My philosophy centers on building robust, interpretable, and ethical data solutions that not only answer questions but also inspire further innovation. I'm always eager to learn new technologies and collaborate on challenging projects.
+                </p>
+            </div>
+        </section>
+
+        <!-- Recommended Additional Sections (Placeholders) -->
+        <section id="blog" class="py-16 bg-blue-50 rounded-lg mt-12">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-6">Blog / Articles</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-lg leading-relaxed text-slate-700 text-center">
+                <p class="mb-4">
+                    Check out my thoughts and insights on various data science topics, project walkthroughs, and new tool reviews.
+                </p>
+                <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-700 transition-colors duration-300 shadow-md">Read My Blog (Coming Soon!)</a>
+            </div>
+        </section>
+
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-16 bg-blue-50 rounded-lg mt-12">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-6">Get in Touch</h2>
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <p class="text-lg leading-relaxed mb-8 text-slate-700">
+                    I'm always open to discussing new projects, collaborations, or opportunities. Feel free to reach out!
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="mailto:your.email@example.com" class="bg-blue-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Email Me</a>
+                    <a href="https://linkedin.com/in/yourlinkedinprofile" target="_blank" class="bg-gray-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">LinkedIn</a>
+                    <a href="https://github.com/yourgithubprofile" target="_blank" class="bg-black text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-gray-900 transition-colors duration-300 shadow-md">GitHub</a>
+                    <!-- Add more social links if desired -->
+                </div>
+                <!-- Optional: Simple Contact Form (requires backend, or external service like Formspree) -->
+                <!--
+                <form action="YOUR_FORMSPREE_URL_HERE" method="POST" class="mt-12 max-w-xl mx-auto space-y-6">
+                    <div>
+                        <label for="name" class="block text-left text-slate-700 text-sm font-medium mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-left text-slate-700 text-sm font-medium mb-2">Email</label>
+                        <input type="email" id="email" name="_replyto" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-left text-slate-700 text-sm font-medium mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 transition-all duration-200" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-700 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-800 transition-colors duration-300 shadow-md">Send Message</button>
+                </form>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+    <!-- Smooth Scrolling for Navigation -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
