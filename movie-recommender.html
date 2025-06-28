@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender System - Barath Anandaraman's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-sub-title {
+            @apply text-3xl font-bold text-blue-800 mb-6;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="index.html#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="index.html#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="index.html#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">Movie Recommender System</h1>
+
+            <img src="button-customer-churn.png" alt="Movie Recommender Overview" class="w-full rounded-lg shadow-md mb-12">
+
+            <!-- Problem Statement -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Problem Statement</h2>
+                <p class="text-lg leading-relaxed text-slate-700">
+                    Create a Movie Recommender system that is Content based and collaborative filtering.
+                </p>
+            </div>
+
+            <!-- Data Used -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Data Used</h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The dataset for this project was obtained from ml dataset. Key datasets included:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Movies</li>
+                    <li>Ratings</li>
+                    <li>Tags</li>
+                    <li>Links</li>
+                </ul>
+            </div>
+
+            <!-- Methodology -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Methodology</h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The project followed a standard data science lifecycle:
+                </p>
+                <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>
+                        **Data Cleaning & Preprocessing:**
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Handled missing values in 'Total Charges' by imputation (mean/median) or removal.</li>
+                            <li>Converted categorical features into numerical representations using One-Hot Encoding.</li>
+                            <li>Normalized numerical features using StandardScaler to ensure consistent scaling.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        **Exploratory Data Analysis (EDA):**
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Visualized feature distributions and relationships with churn using histograms, bar plots, and correlation matrices.</li>
+                            <li>Identified key churn drivers such as contract type, tenure, and internet service type.</li>
+                            <li><img src="https://placehold.co/700x400/ADBEDF/334155?text=EDA+Visualization+Example" alt="EDA Visualization" class="mt-4 rounded-md shadow-md w-full max-w-lg mx-auto"></li>
+                        </ul>
+                    </li>
+                    <li>
+                        **Feature Engineering:**
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Created new features like 'Monthly to Total Charges Ratio' and 'Service Count' to capture more predictive power.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        **Model Selection & Training:**
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Evaluated several classification algorithms: Logistic Regression, Random Forest, Gradient Boosting (XGBoost), and Support Vector Machines.</li>
+                            <li>Used GridSearchCV for hyperparameter tuning to optimize model performance.</li>
+                            <li>Addressed class imbalance using SMOTE (Synthetic Minority Over-sampling Technique).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        **Model Evaluation:**
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Evaluated models based on accuracy, precision, recall, F1-score, and AUC-ROC.</li>
+                            <li>Generated Confusion Matrices and ROC Curves to assess performance visually.</li>
+                            <li><img src="https://placehold.co/700x400/ADBEDF/334155?text=Model+Performance+Graph" alt="Model Performance Graph" class="mt-4 rounded-md shadow-md w-full max-w-lg mx-auto"></li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Results & Insights -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Results & Insights</h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The **XGBoost Classifier** emerged as the best-performing model, achieving an **AUC-ROC score of 0.86** and an **accuracy of 82%** on the test set. Key insights derived include:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Customers on month-to-month contracts are significantly more likely to churn.</li>
+                    <li>Longer tenure is negatively correlated with churn, as expected.</li>
+                    <li>Customers with fiber optic internet service, particularly those without online security or tech support, show higher churn rates.</li>
+                    <li>Lower monthly charges and the absence of multiple services also indicate a higher propensity to churn.</li>
+                </ul>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    These insights allowed the telecom company to design targeted campaigns, offering longer-term contracts, improving customer support for specific internet services, and providing personalized incentives to at-risk customers.
+                </p>
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Tools & Technologies</h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>**Languages:** Python</li>
+                    <li>**Libraries:** Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn, Imbalanced-learn</li>
+                    <li>**Development Environment:** Jupyter Notebooks, VS Code</li>
+                    <li>**Version Control:** Git, GitHub</li>
+                </ul>
+            </div>
+
+            <!-- Lessons Learned / Future Work -->
+            <div class="mb-10">
+                <h2 class="section-sub-title">Lessons Learned / Future Work</h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    This project reinforced the importance of thorough EDA and handling class imbalance in real-world datasets. Feature engineering also proved crucial in boosting model performance.
+                </p>
+                <p class="text-lg leading-relaxed text-slate-700">
+                    Future work could involve:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Exploring deep learning models for churn prediction.</li>
+                    <li>Implementing A/B testing for retention strategies based on model predictions.</li>
+                    <li>Deploying the model as a web service using Flask/FastAPI for real-time predictions.</li>
+                    <li>Incorporating customer feedback data or call center interaction logs for richer features.</li>
+                </ul>
+            </div>
+
+            <!-- Link to GitHub Repository & Live Demo -->
+            <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://github.com/yourgithubprofile/customer-churn-prediction" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Barath Anandaraman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
