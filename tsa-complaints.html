@@ -39,13 +39,13 @@
             <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
             <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">TSA Complaints Analysis</h1>
 
-            <img src="button-customer-churn.png" alt="Customer Churn Prediction Overview" class="w-full rounded-lg shadow-md mb-12">
+            <img src="button-tsa-complaints.png" alt="Customer Churn Prediction Overview" class="w-full rounded-lg shadow-md mb-12">
 
             <!-- Problem Statement -->
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Problem Statement</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700">
-                    A prominent telecom company was experiencing a significant rate of customer churn, leading to substantial revenue loss. They lacked a systematic way to identify customers at risk of churning proactively. The goal of this project was to develop a machine learning model that could accurately predict which customers were likely to churn, allowing the company to implement targeted retention strategies.
+                    This project analyzes TSA complaint data from 2015 to 2021, focusing on patterns and trends across U.S. airports. The primary audience for this analysis includes TSA regional operations managers and analysts, who will benefit from actionable insights presented with clarity and sufficient depth for decision-making.
                 </p>
             </div>
 
@@ -53,61 +53,51 @@
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Data Used</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The dataset for this project was obtained from https://www.hackerearth.com/problem/machine-learning/predict-the-churn-risk-rate-11-fb7a760d/ and contained approximately 7,000 customer records with 21 features. Key features included:
+                    The dataset for this project contains multiple datasets. They include:
                 </p>
                 <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
-                    <li>Demographic Info: Gender, Senior Citizen status, Partner, Dependents.</li>
-                    <li>Account Information: Tenure, Phone Service, Multiple Lines, Internet Service, Online Security, Online Backup, Device Protection, Tech Support, Streaming TV, Streaming Movies, Contract, Paperless Billing, Payment Method, Monthly Charges, Total Charges.</li>
-                    <li>Churn Status: A binary variable indicating whether the customer churned.</li>
+                    <li>complaints-by-category.csv</li>
+                    <li>complaints-by-airport.csv</li>
+                    <li>iata-icao.csv</li>
+                    <li>complaints-by-subcategory.csv</li>
                 </ul>
-                <p class="text-lg leading-relaxed text-slate-700 mt-4">
-                    Initial exploration revealed a class imbalance in the churn variable, which was addressed during preprocessing.
-                </p>
             </div>
 
             <!-- Methodology -->
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Methodology</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The project followed a standard data science lifecycle:
+                    The project followed following steps:
                 </p>
                 <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
                     <li>
                         Data Cleaning & Preprocessing:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Handled missing values in 'Total Charges' by imputation (mean/median) or removal.</li>
-                            <li>Converted categorical features into numerical representations using One-Hot Encoding.</li>
-                            <li>Normalized numerical features using StandardScaler to ensure consistent scaling.</li>
+                            <li>Dropped NAs</li>
+                            <li>Rename fields to match other datasets.</li>
+                            <li>Merge files as needed.</li>
                         </ul>
                     </li>
                     <li>
-                        Exploratory Data Analysis (EDA):
+                        Spatial data Visual maps:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Visualized feature distributions and relationships with churn using histograms, bar plots, and correlation matrices.</li>
-                            <li>Identified key churn drivers such as contract type, tenure, and internet service type.</li>
+                            <li>Aggregate complaints per airport with location</li>
+                            <li>Create Spatial visual scatter map</li>
+                            <li>Visual maps shows that the dataset is concentrated towards USA airport</li>
                         </ul>
                     </li>
                     <li>
-                        Feature Engineering:
+                        Data Visualizations:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Created new features like 'Monthly to Total Charges Ratio' and 'Service Count' to capture more predictive power.</li>
+                            <li>Heatmap of complaints by category over time.</li>
+                            <li>Plot Boxplot of complaint distribution by category</li>
+                            <li>Plot Line Chart of Total complaints over time</li>
+                            <li>Plot Bar Chart data: Top 10 complaint categories by total count</li>
+                            <li>Plot Stacked bar chart data of top 5 airports by top 5 complaint categories</li>
+                            <li>Plot MultiLine graphs by using Top3 categories to check for patterns in Subcategories</li>
                         </ul>
                     </li>
-                    <li>
-                        Model Selection & Training:
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Evaluated several classification algorithms: Logistic Regression, Random Forest, Gradient Boosting (XGBoost), and Support Vector Machines.</li>
-                            <li>Used GridSearchCV for hyperparameter tuning to optimize model performance.</li>
-                            <li>Addressed class imbalance using SMOTE (Synthetic Minority Over-sampling Technique).</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Model Evaluation:
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Evaluated models based on accuracy, precision, recall, F1-score, and AUC-ROC.</li>
-                            <li>Generated Confusion Matrices and ROC Curves to assess performance visually.</li>
-                        </ul>
-                    </li>
+                    
                 </ol>
             </div>
 
