@@ -53,61 +53,38 @@
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Data Used</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The dataset for this project was obtained from https://www.hackerearth.com/problem/machine-learning/predict-the-churn-risk-rate-11-fb7a760d/ and contained approximately 7,000 customer records with 21 features. Key features included:
+                    The dataset for this project was obtained from WAVE Access records published from Whitehouse.
                 </p>
-                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
-                    <li>Demographic Info: Gender, Senior Citizen status, Partner, Dependents.</li>
-                    <li>Account Information: Tenure, Phone Service, Multiple Lines, Internet Service, Online Security, Online Backup, Device Protection, Tech Support, Streaming TV, Streaming Movies, Contract, Paperless Billing, Payment Method, Monthly Charges, Total Charges.</li>
-                    <li>Churn Status: A binary variable indicating whether the customer churned.</li>
-                </ul>
-                <p class="text-lg leading-relaxed text-slate-700 mt-4">
-                    Initial exploration revealed a class imbalance in the churn variable, which was addressed during preprocessing.
-                </p>
+
             </div>
 
             <!-- Methodology -->
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Methodology</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The project followed a standard data science lifecycle:
+                    The project followed the following steps:
                 </p>
                 <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
                     <li>
                         Data Cleaning & Preprocessing:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Handled missing values in 'Total Charges' by imputation (mean/median) or removal.</li>
-                            <li>Converted categorical features into numerical representations using One-Hot Encoding.</li>
-                            <li>Normalized numerical features using StandardScaler to ensure consistent scaling.</li>
+                            <li>Handled missing values and duplicates.</li>
+                            <li>Convert datetime format on columns that have datetime.</li>
+                            <li>Drop columns not needed for the analysis.</li>
                         </ul>
                     </li>
                     <li>
-                        Exploratory Data Analysis (EDA):
+                        Data Visualizations:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Visualized feature distributions and relationships with churn using histograms, bar plots, and correlation matrices.</li>
-                            <li>Identified key churn drivers such as contract type, tenure, and internet service type.</li>
+                            <li>Bar chart to check which months have highest visits.</li>
+                            <li>Stacked Bar Plot for Checking the Top 5 Visitors for the highest and lowest visited month</li>
+                            <li>Scatter plot by hour of day on the delayed appointments</li>
+                            <li>Line Chart to Check for any correlation between delays on arrival vs the appointment counts during the hour</li>
+                            <li>Step Chart to Check Late arrivals by Month</li>
+                            <li>Bubble chart to Check for repeat visitors</li>
                         </ul>
                     </li>
-                    <li>
-                        Feature Engineering:
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Created new features like 'Monthly to Total Charges Ratio' and 'Service Count' to capture more predictive power.</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Model Selection & Training:
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Evaluated several classification algorithms: Logistic Regression, Random Forest, Gradient Boosting (XGBoost), and Support Vector Machines.</li>
-                            <li>Used GridSearchCV for hyperparameter tuning to optimize model performance.</li>
-                            <li>Addressed class imbalance using SMOTE (Synthetic Minority Over-sampling Technique).</li>
-                        </ul>
-                    </li>
-                    <li>
-                        Model Evaluation:
-                        <ul class="list-disc list-inside ml-6">
-                            <li>Evaluated models based on accuracy, precision, recall, F1-score, and AUC-ROC.</li>
-                            <li>Generated Confusion Matrices and ROC Curves to assess performance visually.</li>
-                        </ul>
-                    </li>
+                    
                 </ol>
             </div>
 
@@ -115,17 +92,9 @@
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Results & Insights</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The XGBoost Classifier emerged as the best-performing model, achieving an **AUC-ROC score of 0.86 and an accuracy of 82% on the test set. Key insights derived include:
+The visitor delays are noticeably high at the start of the day and immediately after lunch time. This can mean that there is an opportunity of security and logistics to reduce the delays faced by visitors. There can also be an opportunity for security team to further analyze the need for the repeated visitors.
                 </p>
-                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
-                    <li>Customers on month-to-month contracts are significantly more likely to churn.</li>
-                    <li>Longer tenure is negatively correlated with churn, as expected.</li>
-                    <li>Customers with fiber optic internet service, particularly those without online security or tech support, show higher churn rates.</li>
-                    <li>Lower monthly charges and the absence of multiple services also indicate a higher propensity to churn.</li>
-                </ul>
-                <p class="text-lg leading-relaxed text-slate-700 mt-4">
-                    These insights allowed the telecom company to design targeted campaigns, offering longer-term contracts, improving customer support for specific internet services, and providing personalized incentives to at-risk customers.
-                </p>
+
             </div>
 
             <!-- Tools & Technologies -->
@@ -150,9 +119,7 @@ Line charts shows that the delays faced by visitors are high on early in the mor
 Step Chart shows that the number of visitors having delays are high in December followed by May and March.
 Bubble Chart shows that the month of April has more visitors repeatedly visiting the white house.
                 </p>
-                <p class="text-lg leading-relaxed text-slate-700">
-The visitor delays are noticeably high at the start of the day and immediately after lunch time. This can mean that there is an opportunity of security and logistics to reduce the delays faced by visitors. There can also be an opportunity for security team to further analyze the need for the repeated visitors.
-                </p>
+
             </div>
 
             <!-- Link to GitHub Repository & Live Demo -->
