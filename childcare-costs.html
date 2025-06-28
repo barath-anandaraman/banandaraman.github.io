@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Childcare Cost - Barath Anandaraman's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-sub-title {
+            @apply text-3xl font-bold text-blue-800 mb-6;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="index.html#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="index.html#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="index.html#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">Childcare Costs & Burden</h1>
+
+            <img src="Barath_Anandaraman_Medium1_Infographic.png" alt="hildcare Costs & Burden" class="w-full rounded-lg shadow-md mb-12">
+
+            <!-- Problem Statement -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Problem Statement</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700">
+This project explores the growing burden of childcare costs in the United States and its impact on families, especially those with lower incomes or single earners.                 </p>
+            </div>
+
+            <!-- Data Used -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Data Used</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The dataset for this project was obtained from NDCP data published by the Government.
+                </p>
+            </div>
+
+            <!-- Methodology -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Methodology</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The project was performed across 3 different mediums
+                </p>
+                <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+       
+                    <li>
+                        Infographic:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Designed for social media and public awareness</li>
+                            <li>Simplifies the story using clear visuals, bold headlines, and emotional cues to reach a broad audience quickly</li>
+                        </ul>
+                    </li>
+                    <li>
+                        PowerPoint:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Formal presentations to stakeholders.</li>
+                            <li>It goes deeper into trends, disparities, and implications with narrative content and call-to-action slides</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Tableau Dashboard:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Best suited for analytical users such as policymakers.</li>
+                            <li>Interactive and data-rick, allowing users to explore by income type, state, and burden</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Results & Insights -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Results & Insights</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The balance between simplification (infographic) and depth (Tableau) helps serve multiple audiences without compromise. The usage of various mediums served purpose of sending messages to serve across different types of audiences.
+                </p>
+
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Languages: Python, Tableau</li>
+                    <li>Libraries: Pandas, NumPy, Matplotlib, Seaborn</li>
+                    <li>Development Environment: Jupyter Notebooks, Tableau, Canva</li>
+                    <li>Version Control: Git, GitHub</li>
+                </ul>
+            </div>
+
+
+
+            <!-- Link to GitHub Repository & Live Demo -->
+            <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://github.com/barath-anandaraman/childcare-costs" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Barath Anandaraman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
