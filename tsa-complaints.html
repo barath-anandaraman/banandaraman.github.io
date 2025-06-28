@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Churn Prediction - Barath Anandaraman's Portfolio</title>
+    <title>TSA Complaints Analysis - Barath Anandaraman's Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Inter Font -->
@@ -37,7 +37,7 @@
     <main class="container mx-auto px-6 py-12">
         <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
             <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
-            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">Customer Churn Prediction</h1>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">TSA Complaints Analysis</h1>
 
             <img src="button-customer-churn.png" alt="Customer Churn Prediction Overview" class="w-full rounded-lg shadow-md mb-12">
 
@@ -115,50 +115,28 @@
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Results & Insights</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The XGBoost Classifier emerged as the best-performing model, achieving an **AUC-ROC score of 0.86 and an accuracy of 82% on the test set. Key insights derived include:
+                    The analysis reveals that "Expedited Passenger Screening Program," "mishandling of property," and "Customer Service" are consistently dominant complaint categories. Within these, subcategories like '*' (unknown) and 'TSO' are frequently reported. Monthly trends indicate a significant decrease in complaints during the COVID-19 pandemic. Spatial analysis shows that while high complaint volumes often correlate with passenger traffic at major airports, some smaller airports exhibit disproportionately high issues.
                 </p>
-                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
-                    <li>Customers on month-to-month contracts are significantly more likely to churn.</li>
-                    <li>Longer tenure is negatively correlated with churn, as expected.</li>
-                    <li>Customers with fiber optic internet service, particularly those without online security or tech support, show higher churn rates.</li>
-                    <li>Lower monthly charges and the absence of multiple services also indicate a higher propensity to churn.</li>
-                </ul>
+        
                 <p class="text-lg leading-relaxed text-slate-700 mt-4">
-                    These insights allowed the telecom company to design targeted campaigns, offering longer-term contracts, improving customer support for specific internet services, and providing personalized incentives to at-risk customers.
+                    The project's call to action for TSA leadership includes implementing targeted audits and training programs at high-complaint airports, particularly focusing on recurring subcategories like “Expedited Passenger Screening Program”, “damaged baggage”, and “inappropriate screening procedures”. Further recommendations include prioritizing high-complaint airports for internal reviews, focusing training on TSA agents in areas of repeated complaint subcategories (e.g., Expedited Passenger Screening Program, Customer Service (TSO)), implementing feedback loops, integrating findings into performance metrics and public transparency dashboards, and regularly reviewing subcategory-level trends to proactively adjust policies. These insights aim to improve passenger satisfaction and proactively reduce recurring issues.
                 </p>
             </div>
-
             <!-- Tools & Technologies -->
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
                 <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
                     <li>Languages: Python</li>
-                    <li>Libraries: Pandas, NumPy, Scikit-learn, XGBoost, Matplotlib, Seaborn, Imbalanced-learn</li>
-                    <li>Development Environment: Jupyter Notebooks, VS Code</li>
+                    <li>Libraries: Pandas, NumPy, Matplotlib, Seaborn, geopandas, plotly</li>
+                    <li>Development Environment: Jupyter Notebooks</li>
                     <li>Version Control: Git, GitHub</li>
                 </ul>
             </div>
 
-            <!-- Lessons Learned / Future Work -->
-            <div class="mb-10">
-                <h2 class="section-sub-title"><b>Lessons Learned / Future Work</b></h2>
-                <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    This project reinforced the importance of thorough EDA and handling class imbalance in real-world datasets. Feature engineering also proved crucial in boosting model performance.
-                </p>
-                <p class="text-lg leading-relaxed text-slate-700">
-                    Future work could involve:
-                </p>
-                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
-                    <li>Exploring deep learning models for churn prediction.</li>
-                    <li>Implementing A/B testing for retention strategies based on model predictions.</li>
-                    <li>Deploying the model as a web service using Flask/FastAPI for real-time predictions.</li>
-                    <li>Incorporating customer feedback data or call center interaction logs for richer features.</li>
-                </ul>
-            </div>
 
             <!-- Link to GitHub Repository & Live Demo -->
             <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
-                <a href="https://github.com/yourgithubprofile/customer-churn-prediction" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="https://github.com/yourgithubprofile/tsa-complaints" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
                 <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
             </div>
         </section>
