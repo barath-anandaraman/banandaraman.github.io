@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottery Numbers - Barath's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-sub-title {
+            @apply text-3xl font-bold text-blue-800 mb-6;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="index.html#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="index.html#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="index.html#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">Lottery Numbers Analysis</h1>
+
+            <img src="lottery-numbers.png" alt="Sentiment Analysis Overview" class="w-full rounded-lg shadow-md mb-12">
+
+            <!-- Problem Statement -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Problem Statement</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700">
+                    Are Lottery Numbers winning sequences really random?
+                </p>
+            </div>
+
+            <!-- Data Used -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Data Used</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The dataset for this project was obtained from public dataset. Key datasets includes:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Mega Millions</li>
+                    <li>Powerball</li>
+                    <li>New York Pick 10</li>
+                </ul>
+
+            </div>
+
+            <!-- Methodology -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Methodology</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The project followed the following steps:
+                </p>
+                <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>
+                        Data Cleaning & Preprocessing:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Use Python for preprocessing</li>
+                            <li>Merge datasets needed for Tableau dashboard creation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Tableau dashboard:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Histogram for Frequency of Drawn Numbers</li>
+                            <li>Smoothed Frequency of Numbers using Line Chart</li>
+                            <li>Bubble chart for Top repeated numbers</li>
+                            <li>Density Plot for concentration of Drawn numbers</li>
+                            <li>Small multiple Number frequency chart by Drawn position</li>
+                            <li>Heatmap of Lottery number patters over years</li>
+                        </ul>
+                    </li>
+                    
+                </ol>
+            </div>
+
+
+            <!-- Tools & Technologies -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Languages: Python, Tableau</li>
+                    <li>Libraries: Pandas, </li>
+                    <li>Development Environment: Jupyter Notebooks, Tableau</li>
+                    <li>Version Control: Git, GitHub</li>
+                </ul>
+            </div>
+
+            <!-- Link to GitHub Repository & Live Demo -->
+            <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://github.com/barath-anandaraman/lottery-numbers.git" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Barath Anandaraman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
