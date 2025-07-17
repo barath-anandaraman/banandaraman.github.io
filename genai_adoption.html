@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Impact Navigator - Barath's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-sub-title {
+            @apply text-3xl font-bold text-blue-800 mb-6;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="index.html#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="index.html#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="index.html#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">GenAI Impact Navigator: Uncovering Productivity Dynamics in Enterprise AI Adoption</h1>
+
+            <img src="genai-impact.png" alt="GenAI Impact Overview" class="w-full rounded-lg shadow-md mb-12">
+
+            <!-- Problem Statement -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Problem Statement</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700">
+                    Leaders struggle to justify significant GenAI investments and quantify the return on investment (ROI) due to a lack of clear understanding regarding the productivity dynamics and measurable impact of AI adoption on enterprise performance. This uncertainty hinders strategic decision-making and slows the pace of beneficial AI integration within organizations.
+                </p>
+            </div>
+
+            <!-- Data Used -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Data Used</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The dataset for this project was obtained from Kaggle and contained 10 features. Key features included:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Industry: Sector (e.g., Finance, Healthcare)</li>
+                    <li>GenAI Tool: GenAI Platform (e.g., ChatGPT, Claude, Gemini, Mixtral, LLaMA)</li>
+                    <li>Adoption Year: Year of initial deployment</li>
+                    <li>Number of Employees Impacted: Affected staff count</li>
+                    <li>New Roles Created: Number of AI-driven job roles introduced</li>
+                    <li>Training Hours Provided: Upskilling time investment</li>
+                    <li>Productivity Change: % shift in reported productivity (target variable for this analysis)</li>
+                </ul>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    Initial exploration revealed a fairly balanced dataset.
+                </p>
+            </div>
+
+            <!-- Methodology -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Methodology</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The project followed a standard data science lifecycle:
+                </p>
+                <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>
+                        Data Cleaning & Preprocessing:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>No Missing values</li>
+                            <li>No Outliers found using IQR method</li>
+                            <li>Feature Engineering: Calculated new columns Age of Adoption, Impact_Score, Adoption Intensity, Productivity Efficiency, Sentiment Category</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Exploratory Data Analysis (EDA):
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Visualized Sentiment Distribution.</li>
+                            <li>Visualized Adoption Intensity Vs Role Creation Date</li>
+                            <li>Heatmap to check productivity change by Industry and Tool</li>
+                            <li>StripPlot: New Roles by GenAI Tool</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Model Selection & Training:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Logistic Regression with TF-IDF</li>
+                            <li>Random Forest classifier with TF-IDF</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Model Evaluation:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Generated Confusion matrix to access performance visually</li>
+                            <li>Performed Classification report to get the precision, recall, F1-scores</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Results & Insights -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Results & Insights</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The Logistic Regression emerged as the best-performing model, achieving a strong 80% accuracy.
+                </p>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    This project successfully developed and evaluated an entity-level X sentiment analysis framework. This capability empowers businesses to move beyond superficial social listening to truly understand public opinion at a micro-level, enabling more targeted and effective strategic responses.
+                </p>
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Languages: Python</li>
+                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, NLTK</li>
+                    <li>Development Environment: Jupyter Notebooks</li>
+                    <li>Version Control: Git, GitHub</li>
+                </ul>
+            </div>
+
+            <!-- Link to GitHub Repository & Live Demo -->
+            <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://github.com/barath-anandaraman/sentiment-analysis.git" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Barath Anandaraman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
