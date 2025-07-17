@@ -91,20 +91,24 @@
                             <li>Visualized Adoption Intensity Vs Role Creation Date</li>
                             <li>Heatmap to check productivity change by Industry and Tool</li>
                             <li>StripPlot: New Roles by GenAI Tool</li>
+                            <li>Correlation Analysis</li>
                         </ul>
                     </li>
                     <li>
                         Model Selection & Training:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Logistic Regression with TF-IDF</li>
-                            <li>Random Forest classifier with TF-IDF</li>
+                            <li>Linear Regression</li>
+                            <li>Ridge Regression</li>
+                            <li>Lasso Regression</li>
+                            <li>Random Forest Regression</li>
                         </ul>
                     </li>
                     <li>
                         Model Evaluation:
                         <ul class="list-disc list-inside ml-6">
-                            <li>Generated Confusion matrix to access performance visually</li>
-                            <li>Performed Classification report to get the precision, recall, F1-scores</li>
+                            <li>Generated MSE, R2</li>
+                            <li>Coefficients of Linear, Ridge and Lasso Regression</li>
+                            <li>Feature Importance from Random Forest Regression</li>
                         </ul>
                     </li>
                 </ol>
@@ -114,10 +118,27 @@
             <div class="mb-10">
                 <h2 class="section-sub-title"><b>Results & Insights</b></h2>
                 <p class="text-lg leading-relaxed text-slate-700 mb-4">
-                    The Logistic Regression emerged as the best-performing model, achieving a strong 80% accuracy.
+                    <li>New Roles per Tool: The strip-plot for 'New Roles per Tool' shows that new roles created per tool are distributed across a similar range, with some concentration at certain integer values</li>
+<li>Adoption Intensity vs. Role Creation Rate: The scatter plot for 'Adoption Intensity vs. Role Creation Rate' indicates a generally decreasing trend in role creation rate as adoption intensity increases, although with considerable spread, especially at lower adoption intensities</li>
+<li>Sentiment Category Distribution: The distribution shows that 'Neutral' sentiment is the most prevalent, followed by 'Negative' and then 'Positive'. This suggests that while GenAI adoption leads to productivity changes, employee sentiment isn't overwhelmingly positive and often includes elements of anxiety or concern.</li>
+<li>Heatmap to check productivity change by Industry and Tool: All values in the heatmap are positive, indicating that on average, GenAI adoption leads to increased productivity across all listed tools and industries.</li>
+<li>Correlation Analysis: The correlation heatmap provides insights into relationships between numerical features.</li>
+'Productivity Change (%)' has a strong positive correlation with 'Productivity Efficiency'.
+'Adoption Intensity' shows a strong positive correlation with 'Impact_Score' (0.83) and 'Training_Score' (0.42).
+'Age of Adoption' is negatively correlated with 'Adoption Year'.
+'Number of Employees Impacted' and 'Training Hours Provided' show a moderate positive correlation (0.44).
+<li>Linear Regression: MSE 79.96, R-Squared 0.119</li>
+                    Coefficient: 'Productivity Efficiency' (776.59) has the largest positive coefficient, indicating a strong positive relationship with productivity change. 'Role Creation Rate' (3.88) and 'Age of Adoption' (0.063) also show positive coefficients. 'Adoption Intensity' has a very small positive coefficient.
+<li>Ridge Regression: MSE 81.33, Rsquared 0.104</li>
+                    Coefficients: Similar to linear regression, 'Productivity Efficiency' (469.65) is the largest positive coefficient. Coefficients are generally smaller in magnitude compared to linear regression, as expected with regularization.
+                    <li>Lasso Regression: MSE 90.74, R-Squared -0.000097</li>
+                    Coefficients: The Lasso coefficients are the same as Ridge in the provided output, which might be an error in the snippet. Given the low R-squared, Lasso seems to perform poorly.
+                    <li>Random Forest Regression: MSE 0.0064, R-Squared 0.9999</li>
+                    Feature Importance (Random Forest): 'Productivity Efficiency' is by far the most important feature, followed by 'Training Hours Provided'. This highlights that how efficiently productivity changes with training and the amount of training itself are critical drivers of productivity.
+                    
                 </p>
                 <p class="text-lg leading-relaxed text-slate-700 mt-4">
-                    This project successfully developed and evaluated an entity-level X sentiment analysis framework. This capability empowers businesses to move beyond superficial social listening to truly understand public opinion at a micro-level, enabling more targeted and effective strategic responses.
+                    The Random Forest model significantly outperforms linear, Ridge, and Lasso regressions, achieving a very high R-squared, suggesting it captures the underlying relationships in the data much better
                 </p>
             </div>
 
@@ -126,7 +147,12 @@
                 <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
                 <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
                     <li>Languages: Python</li>
-                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, NLTK</li>
+                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</li>
+                    <li>sklearn.preprocessing: MinMaxScaler, LabelEncoder</li>
+                    <li>sklearn.model_selection: train_test_split</li>
+                    <li>sklearn.ensemble: RandomForestRegressor</li>
+                    <li>sklearn.linear_model: LinearRegression, Ridge, Lasso</li>
+                    <li>sklearn.metrics: mean_squared_error, r2_score</li>
                     <li>Development Environment: Jupyter Notebooks</li>
                     <li>Version Control: Git, GitHub</li>
                 </ul>
