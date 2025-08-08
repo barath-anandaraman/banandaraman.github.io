@@ -1,1 +1,180 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Expense Analysis & Savings Recommendation System - Barath's Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind 'bg-slate-50' equivalent */
+            color: #334155; /* Tailwind 'text-slate-700' equivalent */
+        }
+        .section-sub-title {
+            @apply text-3xl font-bold text-blue-800 mb-6;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+    <!-- Header/Navigation Bar -->
+    <header class="bg-blue-900 text-white p-6 shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold rounded-md px-3 py-2 hover:bg-blue-800 transition-colors duration-300">Barath Anandaraman</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html#home" class="text-lg hover:text-blue-200 transition-colors duration-300">Home</a></li>
+                <li><a href="index.html#projects" class="text-lg hover:text-blue-200 transition-colors duration-300">Projects</a></li>
+                <li><a href="index.html#skills" class="text-lg hover:text-blue-200 transition-colors duration-300">Skills</a></li>
+                <li><a href="index.html#about" class="text-lg hover:text-blue-200 transition-colors duration-300">About</a></li>
+                <li><a href="index.html#contact" class="text-lg hover:text-blue-200 transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+            <a href="index.html#projects" class="inline-block text-blue-600 hover:underline mb-8 text-lg font-medium">&larr; Back to Projects</a>
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-8 text-center">Personal Finance Expense Analysis & Savings Recommendation System</h1>
+
+            <img src="finance.png" alt="Personal Finance Expense Analysis & Savings Recommendation System Overview" class="w-full rounded-lg shadow-md mb-12">
+
+            <!-- Problem Statement -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Problem Statement</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700">
+                   Effective personal financial management is a pervasive challenge for many individuals. They often struggle with budgeting, controlling expenses, and maximizing savings due to a lack of clear, personalized insights into their financial habits. The core business problem this project addresses is the gap between raw financial data and actionable, personalized guidance. This project proposes a data-driven system that transforms complex financial data into interpretable insights, enabling users to optimize their spending and enhance their savings potential.
+                </p>
+            </div>
+
+            <!-- Data Used -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Data Used</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The dataset for this project was obtained from Kaggle and contained 32,000 rows. Key features included:
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>monthly_income_usd</li>
+                    <li>monthly_expenses_usd</li>
+                    <li>savings_usd</li>
+                    <li>loan_amount_usd</li>
+                    <li>monthly_emi_usd</li>
+                    <li>debt_to_income_ratio</li>
+                </ul>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    Initial exploration revealed a fairly balanced dataset without any nulls, this is probably this was a synthetic dataset.
+                </p>
+            </div>
+
+            <!-- Methodology -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Methodology</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    The project followed a standard data science lifecycle:
+                </p>
+                <ol class="list-decimal list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>
+                        Data Cleaning & Preprocessing:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>No Missing values</li>
+                            <li>Outliers found using box plot, this was corrected using Winsorization</li>
+                            <li>Feature Engineering: Calculated new columns disposable_income_usd, expense_to_income_ratio, savings_to_income_ratio, age_group</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Exploratory Data Analysis (EDA):
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Visualized Histograms for each of key financial features</li>
+                            <li>Heatmap to correlation between the financial features</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Model Selection & Training: K-Means Clustering
+                        <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                            To select the optimal number of clusters (k), the Elbow Method was employed, which plots the Within-Cluster Sum of Squares (WCSS) against different values of k. The elbow point, where the rate of decrease in WCSS slows down, suggested that k=4 was the most appropriate choice for this dataset.
+                        </p>
+                    </li>
+                    <li>
+                        Model Evaluation:
+                        <ul class="list-disc list-inside ml-6">
+                            <li>Silhouette Scorfe</li>
+                            <li>Davies-Bouldin Index</li>
+                            <li>WCSS (Within-Cluster Sum of Squares)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Results & Insights -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Results & Insights</b></h2>
+                <p class="text-lg leading-relaxed text-slate-700 mb-4">
+                    <li>Silhouette Score: A score of 0.2189 was achieved. This is a positive score, indicating moderate cluster separation, but acceptable for real-world behavioral data</li>
+<li>Davies-Bouldin Index: The model yielded a score of 1.3896. A lower score indicates better clustering, so this value suggests a reasonable level of separation and compactness</li>
+<li>WCSS (Within-Cluster Sum of Squares): A final WCSS value of 108,406.85 was recorded. This metric confirmed the elbow point at k=4 by showing a diminishing return in cluster compactness for values of k4</li>
+<li>Heatmap to check productivity change by Industry and Tool: All values in the heatmap are positive, indicating that on average, GenAI adoption leads to increased productivity across all listed tools and industries.</li>                    
+                </p>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    Performed Box plot analysis on distributions by cluster.
+                  <li>Monthly_income_usd
+                  <ul><li>Cluster 0 and 1 have higher median income</li>
+                    <li>Cluster 2 has lowest median with a tight IQR (less income variance)</li>
+                  </ul>
+                  </li>
+                  <li>monthly_expenses_usd
+                  <ul><li>Cluster 1 and 3 spend more</li>
+                    <li>Cluster 0 maintains lower median expenses despite high income (savings)</li>
+                    <li>Cluster 2 spends the least, likely due to limited income</li>
+                  </ul>
+                  </li>
+                  <li>savings_usd
+                  <ul><li>Cluster 0 and 1 save more</li>
+                    <li>Cluster 2 and 3 show limited savings</li>
+                  </ul>
+                  </li>
+                  <li>loan_amount_usd & monthly_emi_usd
+                  <ul><li>Cluster 3 is heavily burdened by loans and EMI</li>
+                    <li>Cluster 2 and 0 have minimal to zero loans</li>
+                  </ul>
+                  </li>
+                  <li>disposable_income_usd
+                  <ul><li>Cluster 0 leads with high surplus</li>
+                    <li>Cluster 1 is moderate</li>
+                    <li>Clusters 2 and 3 show low to moderate surplus</li>
+                  </ul>
+                  </li>
+                </p>
+            </div>
+
+            <!-- Tools & Technologies -->
+            <div class="mb-10">
+                <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
+                    <li>Languages: Python</li>
+                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</li>
+                    <li>sklearn.preprocessing: MinMaxScaler, LabelEncoder</li>
+                    <li>sklearn.model_selection: train_test_split</li>
+                    <li>sklearn.ensemble: RandomForestRegressor</li>
+                    <li>sklearn.linear_model: LinearRegression, Ridge, Lasso</li>
+                    <li>sklearn.metrics: mean_squared_error, r2_score</li>
+                    <li>Development Environment: Jupyter Notebooks</li>
+                    <li>Version Control: Git, GitHub</li>
+                </ul>
+            </div>
+
+            <!-- Link to GitHub Repository & Live Demo -->
+            <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
+                <a href="https://github.com/barath-anandaraman/genai-adoption-analysis.git" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white text-center p-6 mt-12">
+        <p>&copy; 2025 Barath Anandaraman. All rights reserved.</p>
+    </footer>
+</body>
+</html>
