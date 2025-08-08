@@ -114,7 +114,6 @@
                     <li>Silhouette Score: A score of 0.2189 was achieved. This is a positive score, indicating moderate cluster separation, but acceptable for real-world behavioral data</li>
 <li>Davies-Bouldin Index: The model yielded a score of 1.3896. A lower score indicates better clustering, so this value suggests a reasonable level of separation and compactness</li>
 <li>WCSS (Within-Cluster Sum of Squares): A final WCSS value of 108,406.85 was recorded. This metric confirmed the elbow point at k=4 by showing a diminishing return in cluster compactness for values of k4</li>
-<li>Heatmap to check productivity change by Industry and Tool: All values in the heatmap are positive, indicating that on average, GenAI adoption leads to increased productivity across all listed tools and industries.</li>                    
                 </p>
                 <p class="text-lg leading-relaxed text-slate-700 mt-4">
                     Performed Box plot analysis on distributions by cluster.
@@ -146,6 +145,39 @@
                   </ul>
                   </li>
                 </p>
+                <p class="text-lg leading-relaxed text-slate-700 mt-4">
+                    Performed Radar chart for better visual interpretation
+
+                    
+                  <li>Cluster 0 (Blue): “High Earners, High Surplus”
+                      <p>Recommendation: Consider long-term investment, retirement optimization, or diversification into real estate or stocks.</p>
+                  <ul><li>High on monthly_income_usd and disposable_income_usd</li>
+                    <li>Moderate savings and low debt</li>
+                      <li>Moderate savings and low debt</li>
+                  </ul>
+                  </li>
+             
+                  <li>Cluster 1 (Orange): “Stable Mid-Income, Moderate Expense & Savings”
+                      <p>Recommendation: Continue current financial strategy, start automating savings and optimize for tax benefits</p>
+                  <ul><li>Balanced profile: medium income, expenses, and savings</li>
+                    <li>Slightly better than average across most metrics, but not dominant</li>
+    
+                  </ul>
+                  </li>
+                  <li>Cluster 2 (Green): “Financially Vulnerable”
+                      <p>Recommendation: Focus on income growth (upskilling), expense minimization, and building an emergency fund</p>
+                  <ul><li>Low across all metrics: income, savings, surplus, and debt</li>
+                    <li>Likely young earners or underemployed individuals</li>
+                  </ul>
+                  </li>
+                  <li>Cluster 3 (Red): “High Debt Load with High EMI”
+                      <p>Recommendation: Debt consolidation, refinancing, or income support programs. Avoid further debt burden</p>
+                  <ul><li>Dominant in loan_amount_usd and monthly_emi_usd</li>
+                    <li>Income is relatively low, savings are modest</li>
+                      <li>Disposable income is limited, indicating financial stress</li>
+                  </ul>
+                  </li>
+                </p>
             </div>
 
             <!-- Tools & Technologies -->
@@ -153,12 +185,10 @@
                 <h2 class="section-sub-title"><b>Tools & Technologies</b></h2>
                 <ul class="list-disc list-inside text-lg leading-relaxed text-slate-700 space-y-2">
                     <li>Languages: Python</li>
-                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn</li>
-                    <li>sklearn.preprocessing: MinMaxScaler, LabelEncoder</li>
-                    <li>sklearn.model_selection: train_test_split</li>
-                    <li>sklearn.ensemble: RandomForestRegressor</li>
-                    <li>sklearn.linear_model: LinearRegression, Ridge, Lasso</li>
-                    <li>sklearn.metrics: mean_squared_error, r2_score</li>
+                    <li>Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Scipy</li>
+                    <li>sklearn.preprocessing: StandardScaler</li>
+                    <li>sklearn.cluster: KMeans</li>
+                    <li>sklearn.metrics: silhouette_score, davies_bouldin_score</li>
                     <li>Development Environment: Jupyter Notebooks</li>
                     <li>Version Control: Git, GitHub</li>
                 </ul>
@@ -166,7 +196,7 @@
 
             <!-- Link to GitHub Repository & Live Demo -->
             <div class="text-center mt-12 space-y-4 md:space-y-0 md:space-x-6">
-                <a href="https://github.com/barath-anandaraman/genai-adoption-analysis.git" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
+                <a href="https://github.com/barath-anandaraman/finance-recommendation-system.git" target="_blank" class="bg-black text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors duration-300 shadow-md">View on GitHub</a>
                 <a href="#" target="_blank" class="bg-blue-700 text-white px-8 py-4 rounded-full text-xl font-medium hover:bg-blue-800 transition-colors duration-300 shadow-md">Live Demo (Coming Soon!)</a>
             </div>
         </section>
